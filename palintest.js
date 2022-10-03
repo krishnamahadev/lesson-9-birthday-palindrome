@@ -1,3 +1,17 @@
+const birthdaydate = document.querySelector("#b-date");
+
+
+const checkbutton = document.querySelector("#check-button");
+
+const outputmsg = document.querySelector("#output-message");
+
+
+
+
+
+
+
+
 function reversestring(str)
 {
 return str.split("").reverse().join("")
@@ -275,16 +289,47 @@ console.log(ispalindrome("Sharadhi"));
 
 // console.log(getalldateformats(bdate));
 
-console.log(whichoneisapalindrome(bdate));
+// console.log(whichoneisapalindrome(bdate));
 
-console.log(getnextdate(bdate));
-
-
-console.log(getnextpalindromedate(bdate));
+// console.log(getnextdate(bdate));
 
 
-console.log(getprevnextdate(bdate));
+// console.log(getnextpalindromedate(bdate));
 
-console.log(getprevnextpalindromedate(bdate));
+
+// console.log(getprevnextdate(bdate));
+
+// console.log(getprevnextpalindromedate(bdate));
 
 // console.log(isleapyear(bdate))
+
+
+function palindrome()
+{
+    const bdate = birthdaydate.value;
+    var bdatearr = 
+    {
+        day : bdate.slice(-2),
+        month : bdate.slice(5,-3),
+        year : bdate.slice(0,-6)
+
+    }
+
+    // console.log(typeof bdate, bdate);
+    console.log(bdatearr)
+    // return whichoneisapalindrome()
+    if(whichoneisapalindrome(bdatearr))
+    {
+        outputmsg.innerText="Entered birthdate is a palindrome! Cheers!"
+
+    }
+    else
+    {
+        
+
+        outputmsg.innerText="Sorry entered birthdate is not a palindrome!"
+        console.log(getnextpalindromedate(bdatearr));
+
+    }
+}
+checkbutton.addEventListener("click",palindrome);
