@@ -238,30 +238,53 @@ var daysinamonth = [31,28,31,30,31,30,31,31,30,31,30,31]
     }
 }
 
+
+
+function getprevnextpalindromedate(bdate)
+{
+    var counter = 0;
+    prevnextdate = getprevnextdate(bdate);
+
+    while(1)
+    {
+        counter = counter+1;
+        if(whichoneisapalindrome(prevnextdate))
+        {
+            break;
+        }
+        
+            nextdate=getnextdate(prevnextdate);
+            
+    }
+
+    return [counter,prevnextdate];
+}
 var bdate = 
 {
-    day : 1,
-    month : 3,
+    day : 2,
+    month : 11,
     year : 2020
 }
 
-console.log(ispalindrome("Hello"));
+// console.log(ispalindrome("Hello"));
 console.log(ispalindrome("Sharadhi"));
-console.log(ispalindrome("lol"));
+// console.log(ispalindrome("lol"));
 
 
-console.log(convertdatetostring(bdate));
+// console.log(convertdatetostring(bdate));
 
-console.log(getalldateformats(bdate));
+// console.log(getalldateformats(bdate));
 
 console.log(whichoneisapalindrome(bdate));
 
 console.log(getnextdate(bdate));
 
 
-console.log(getnextpalindromedate(bdate))
+console.log(getnextpalindromedate(bdate));
 
 
 console.log(getprevnextdate(bdate));
+
+console.log(getprevnextpalindromedate(bdate));
 
 // console.log(isleapyear(bdate))
