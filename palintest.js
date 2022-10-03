@@ -234,7 +234,7 @@ var daysinamonth = [31,28,31,30,31,30,31,31,30,31,30,31]
         if(day===0)
         {
             day=daysinamonth[month-1];
-            month=month-1
+            month=month-1;
         }
             
     }
