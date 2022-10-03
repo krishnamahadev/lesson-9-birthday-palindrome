@@ -267,7 +267,7 @@ function getprevnextpalindromedate(bdate)
             break;
         }
         
-            nextdate=getnextdate(prevnextdate);
+            prevnextdate=getprevnextdate(prevnextdate);
             
     }
 
@@ -297,39 +297,39 @@ console.log(ispalindrome("Sharadhi"));
 // console.log(getnextpalindromedate(bdate));
 
 
-// console.log(getprevnextdate(bdate));
+console.log(getprevnextdate(bdate));
 
 // console.log(getprevnextpalindromedate(bdate));
 
 // console.log(isleapyear(bdate))
 
 
-function palindrome()
-{
-    const bdate = birthdaydate.value;
-    var bdatearr = 
-    {
-        day : bdate.slice(-2),
-        month : bdate.slice(5,-3),
-        year : bdate.slice(0,-6)
+// function palindrome()
+// {
+//     const bdate = birthdaydate.value;
+//     var bdatearr = 
+//     {
+//         day : bdate.slice(-2),
+//         month : bdate.slice(5,-3),
+//         year : bdate.slice(0,-6)
 
-    }
+//     }
 
-    // console.log(typeof bdate, bdate);
-    console.log(bdatearr)
-    // return whichoneisapalindrome()
-    if(whichoneisapalindrome(bdatearr))
-    {
-        outputmsg.innerText="Entered birthdate is a palindrome! Cheers!"
+//     // console.log(typeof bdate, bdate);
+//     console.log(bdatearr)
+//     // return whichoneisapalindrome()
+//     if(whichoneisapalindrome(bdatearr))
+//     {
+//         outputmsg.innerText="Entered birthdate is a palindrome! Cheers!"
 
-    }
-    else
-    {
+//     }
+//     else
+//     {
         
 
-        outputmsg.innerText="Sorry entered birthdate is not a palindrome!"
-        console.log(getnextpalindromedate(bdatearr));
+//         outputmsg.innerText="Sorry entered birthdate is not a palindrome!"
+//         console.log(getnextpalindromedate(bdatearr));
 
-    }
-}
-checkbutton.addEventListener("click",palindrome);
+//     }
+// }
+// checkbutton.addEventListener("click",palindrome);
