@@ -94,15 +94,15 @@ function whichoneisapalindrome(bdate)
 
 function isleapyear(bdate)
 {
-    if(bdate.year % 400 ===0)
+    if(bdate % 400 ===0)
     {
         return true;
     }
-    if(bdate.year % 100 ===0)
+    if(bdate % 100 ===0)
     {
         return false;
     }
-    if(bdate.year%4 ===0)
+    if(bdate%4 ===0)
     {
         return true;
     }
@@ -188,11 +188,60 @@ function getnextpalindromedate(bdate)
 
 
 
+function getprevnextdate(bdate)
+{
+var day = bdate.day-1;
+var month=bdate.month;
+var year = bdate.year;
+
+
+var daysinamonth = [31,28,31,30,31,30,31,31,30,31,30,31]
+
+    if(month===3)
+    {
+            if(isleapyear(year))
+            {
+                if(day===0)
+                {
+                    day=29;
+                    month=month-1;
+                }
+            }
+            else
+            {
+                day=day-1;
+                month=month-1;
+                
+            } 
+    }  
+    else
+    {
+
+        if(day===0)
+        {
+            day=daysinamonth[month-1];
+            month=month-1
+        }
+            
+    }
+
+    if(month==0)
+    {
+        month=12;
+        year=year-1;
+    }
+
+    return {
+        day : day,
+        month : month,
+        year : year
+    }
+}
 
 var bdate = 
 {
-    day : 31,
-    month : 12,
+    day : 1,
+    month : 3,
     year : 2020
 }
 
@@ -211,3 +260,8 @@ console.log(getnextdate(bdate));
 
 
 console.log(getnextpalindromedate(bdate))
+
+
+console.log(getprevnextdate(bdate));
+
+// console.log(isleapyear(bdate))
