@@ -74,7 +74,7 @@ function getalldateformats(bdate)
     return [ddmmyyyy,mmddyyyy,yyyymmdd,ddmmyy,mmddyy,yymmdd];
 }
 
-function whichoneisapalindrome()
+function whichoneisapalindrome(bdate)
 {
     var list_poss = getalldateformats(bdate)
     var flag = false;
@@ -164,6 +164,26 @@ var daysinamonth = [31,28,31,30,31,30,31,31,30,31,30,31]
     }
 }
 
+
+function getnextpalindromedate(bdate)
+{
+    var counter = 0;
+    nextdate = getnextdate(bdate);
+
+    while(1)
+    {
+        counter = counter+1;
+        if(whichoneisapalindrome(nextdate))
+        {
+            break;
+        }
+        
+            nextdate=getnextdate(nextdate);
+            
+    }
+
+    return [counter,nextdate];
+}
    
 
 
@@ -171,9 +191,9 @@ var daysinamonth = [31,28,31,30,31,30,31,31,30,31,30,31]
 
 var bdate = 
 {
-    day : 28,
-    month : 2,
-    year : 2019
+    day : 31,
+    month : 12,
+    year : 2020
 }
 
 console.log(ispalindrome("Hello"));
@@ -188,3 +208,6 @@ console.log(getalldateformats(bdate));
 console.log(whichoneisapalindrome(bdate));
 
 console.log(getnextdate(bdate));
+
+
+console.log(getnextpalindromedate(bdate))
