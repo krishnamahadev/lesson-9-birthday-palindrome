@@ -1,0 +1,31 @@
+body
+{
+background-color :darkcyan;
+}
+
+
+.header-main
+{
+    padding: 2rem;
+}
+
+.main-body
+{
+    padding: 2rem;
+    font-size: larger;
+}
+
+#check-button
+{
+    padding: 0.5rem;
+}
+
+#b-date
+{
+    padding: 0.5rem;
+}
+
+#output-meesage
+{
+    padding: 0.5rem;
+}

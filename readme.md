@@ -1,0 +1,1 @@
+# This mini project is about finding if enetered birthay date is palindrome or not
